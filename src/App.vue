@@ -1,43 +1,37 @@
 <template>
   <div id="main">
-    <com_slot>
-      <template v-slot="{data,index}">
-        <div>
-          我插入了main中了,{{data.name}}:{{ data.age }}--{{ index }}
-        </div>
-      </template>
-      <template v-slot:header>
-        <div>
-          我插入了header中了
-        </div>
-      </template>
-      <template v-slot:footer>
-        <div>
-          我插入了footer中了
-        </div>
-      </template>
-    </com_slot>
-<div>-------------------------------------------</div>
-    <com_slot>
-      <template v-slot:[name]>
-        <div>
-          我插入了
-        </div>
-      </template>
-    </com_slot>
+    <p>父级 <span class="sp">sass</span></p>
+    <!-- <com1 :title="tl" :full-name="name" :arr="[1,2,3]"></com1> -->
+    <com1 :title="tl" :full-name="name" @on-click="res" ref="ref_res" ></com1>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref,reactive } from "vue";
-import com_slot from "./components/com-slot.vue";
+import { ref } from "vue";
+import com1 from "./components/com-com1.vue";
 
-const name=ref('default');
-// const name=ref("header");
-// const name=ref("footer");
+//父给子传的值--------tl,name,arr-------------------
+const tl=ref<string>("标题");
+const name=ref<string>("小涵");
+
+//父接收子的值----------------------------
+//方法一 通过绑定事件触发获取传过来的值
+const res=(a:number,b:String)=>{
+  console.log(a,b);
+}
+//方法二 通过ref获取传过来的值
+const ref_res=ref<InstanceType<typeof com1>>();
+console.log(ref_res.value?.age,ref_res.value?.open,ref_res.value);
 
 </script>
 
 <style>
-button{background-color: #ccc;margin-right: 20px;}
+#main p {
+  color: red;
+  &:hover{color: aqua;}
+  .sp {
+    color: blue;
+    padding-left: 20px;
+  }
+}
 </style>

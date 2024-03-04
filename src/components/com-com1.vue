@@ -1,6 +1,6 @@
 <template>
 <div>我是一个组件</div>
-<div>接收父的值:{{ title }}--- {{ arr }}</div>
+<div>接收父的值:{{ title }}---{{ fullName }}--- {{ arr }}</div>
 <div><button @:click="send">给父传值</button></div>
 </template>
 
@@ -11,6 +11,10 @@ import { ref } from "vue";
 //方法一 通用写法
 // const props=defineProps({
 //     title:{
+//         type:String,
+//         default:"标题"
+//     },
+//     fullName:{
 //         type:String,
 //         default:"小美"
 //     },
@@ -23,17 +27,19 @@ import { ref } from "vue";
 //方法二 ts写法
 // const props=defineProps<{
 //     title:String,
+//     fullName:String,
 //     arr:number[]
 // }>();
 
 //方法三 ts写法 withDefaults是ts特有的 可以附上默认值
 const props=withDefaults(defineProps<{
     title:String,
+    fullName:String,
     arr:number[]
 }>(),{
     arr:()=>[666]
 });
-console.log(props.title);
+console.log(props.title,props.fullName,props.arr);
 
 //子给父传值---------------------------------------
 //方法一 通用写法
@@ -43,6 +49,7 @@ const emit= defineEmits<{
     (e:"on-click",num:number,str:String):void,
     (evt:"on-mouseover",num:number,str:String):void,
 }>();
+
 const send=()=>{
     emit('on-click',1,"a");
 }
