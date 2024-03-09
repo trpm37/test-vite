@@ -1,5 +1,5 @@
 <template>
-<div>我是一个组件</div>
+<div>我是一个 组件</div>
 <div>接收父的值:{{ title }}---{{ fullName }}--- {{ arr }}</div>
 <div><button @:click="send">给父传值</button></div>
 </template>
