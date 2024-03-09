@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import btn from "./components/btn.vue";
+import btn from "../../components/btn.vue";
 
 const flag = ref<boolean>(true);
 </script>

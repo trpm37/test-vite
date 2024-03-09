@@ -11,8 +11,8 @@
 
 <script setup lang="ts">
 import { ref,reactive } from "vue";
-import com_btn from "./components/btn.vue";
-import com_com1 from "./components/com-com1.vue";
+import com_btn from "../../components/btn.vue";
+import com_com1 from "../../components/com-com1.vue";
 
 const componentId=ref(com_btn);
 const coms=reactive([

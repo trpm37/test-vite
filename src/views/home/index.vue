@@ -2,7 +2,7 @@
     <div class="home">首页</div>
 </template>
 
-<script lang="ts" name="home">
+<script setup lang="ts" name="home">
 
 </script>
 

@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
 import { ref,reactive } from "vue";
-import com_slot from "./components/com-slot.vue";
+import com_slot from "../../components/com-slot.vue";
 
 const name=ref('default');
 // const name=ref("header");

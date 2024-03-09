@@ -42,7 +42,7 @@
   </div>
 
   <div ref="refDom">refDom</div>
-  <button @click="refChange">ref修改</button>
+  <button @click="refChange">ref修改---{{ refObj.name }}</button>
   <form>
     <input v-model="reactiveObj.name" type="text">
     <br/>
@@ -140,7 +140,7 @@ const reactiveChange = () => {
   reactiveArr.push(...arr);
   console.log(reactiveObj,reactiveArr);
 
-  rd.name="小时";
+  // rd.name="小时";//无法为“name”赋值，因为它是只读属性
   console.log('修改readonly的值不变',reactiveObj2,rd);
   reactiveObj2.name="小寒";
   console.log('修改原值readonly的值会变',reactiveObj2,rd);

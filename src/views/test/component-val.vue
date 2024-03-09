@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import com1 from "./components/com-com1.vue";
+import com1 from "../../components/com-com1.vue";
 
 //父给子传的值--------tl,name,arr-------------------
 const tl=ref<string>("标题");
