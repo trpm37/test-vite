@@ -1,5 +1,5 @@
 <template>
-  <div>监听单个值：<input v-model="name" /> {{ name }}</div>
+  <div>监听单 个值：<input v-model="name" /> {{ name }}</div>
   <div>监听多个值：<input v-model="name2" /> {{ name2 }}</div>
   <div>监听对象obj.a.b：<input v-model="obj.a.b" /> {{ obj.a.b }}</div>
   <div>只监听对象obj.a.c：<input v-model="obj.a.c" /> {{ obj.a.c }}</div>
